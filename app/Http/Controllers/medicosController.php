@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class medicosController extends Controller
 {
-    protected $pag='roleta';
-
     public function GetMedicos(){
 
         return "teste";
@@ -15,7 +13,6 @@ class medicosController extends Controller
 
     public function index(){
 
-        return view("view.roleta.index");
+        return view("index");
     }
-    
 }
