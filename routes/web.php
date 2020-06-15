@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 
 ////////////////////////////////////// Sistema Roleta ////////////////////////////////////
-Route::get('medicos', ['as'=>'medico_teste','uses' => 'medicosController@GetMedicos']);
-Route::get('medicos/index', ['as'=>'medico_index','uses' => 'medicosController@index']);
+
+
+Route::group(['prefix' => 'roleta'], function () {
+    Route::get('/child', 'RoletaController@child');
+});
